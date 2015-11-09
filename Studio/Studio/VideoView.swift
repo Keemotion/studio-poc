@@ -4,14 +4,16 @@ import UIKit
 
 class VideoView: UIButton {
 
-    func setVideoURL(url: NSURL) {
-        let textView = UILabel(frame: self.bounds)
-        textView.text = url.absoluteString;
-        textView.textAlignment = .Center
-        textView.backgroundColor = UIColor.blueColor()
-        self.addSubview(textView)
+    var videoURL: NSURL! {
+        didSet {
+            let textView = UILabel(frame: self.bounds)
+            textView.text = videoURL.absoluteString;
+            textView.textAlignment = .Center
+            textView.backgroundColor = UIColor.blueColor()
+            self.addSubview(textView)
+        }
     }
-    
+  
     func setTitle(title: String, color: UIColor) {
         let textView = UILabel(frame: CGRect(origin: CGPoint(x: 3, y: 3), size: CGSize(width: 5, height: 5)))
         textView.text = title
