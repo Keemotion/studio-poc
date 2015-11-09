@@ -21,6 +21,8 @@ class MainViewController: UIViewController {
             videoView.setTitle("test \(index)", color: UIColor.blackColor())
         }
         
+        onAirVideoView.setFrameColor(UIColor.whiteColor())
+        
     }
     
     override func didReceiveMemoryWarning() {

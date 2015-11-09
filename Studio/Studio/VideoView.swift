@@ -24,4 +24,9 @@ class VideoView: UIButton {
         addSubview(textView)
     }
     
+    func setFrameColor(color: UIColor) {
+        layer.borderWidth = 2.0
+        layer.borderColor = color.CGColor
+    }
+    
 }
