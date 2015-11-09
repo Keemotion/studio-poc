@@ -30,8 +30,7 @@
                                         <exclude reference="bvj-Ot-0OG"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="4" y="25" width="393" height="221"/>
+                                <variation key="widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="bvj-Ot-0OG"/>
                                     </mask>
