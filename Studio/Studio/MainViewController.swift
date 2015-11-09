@@ -31,5 +31,8 @@ class MainViewController: UIViewController {
     }
     
     
+    @IBAction func cameraSelected(sender: VideoView) {
+        
+    }
 }
 

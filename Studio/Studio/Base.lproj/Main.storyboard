@@ -90,6 +90,9 @@
                                         <include reference="KCI-q0-17S"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="cameraSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="Zw4-cR-DAc"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltK-no-Xjf" customClass="VideoView" customModule="Studio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
