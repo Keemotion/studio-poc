@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let url = NSURL(string: "http://localhost.../") {
+        if let url = NSURL(string: "http://localhost:1337/mjpeg_stream") {
             onAirVideoView.videoURL = url
         }
         onAirVideoView.setTitle("Live", color: UIColor.redColor())
