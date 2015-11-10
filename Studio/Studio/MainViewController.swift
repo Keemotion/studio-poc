@@ -54,6 +54,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    func goOnAir() {
+        if let cameraIdx = previewCamera {
+            onAirCamera = cameraIdx
+        }
+    }
+    
     @IBAction func cameraSelected(sender: VideoView) {
         if let cameraIdx = cameraVideoViews.indexOf(sender), let _ = sender.videoConnection {
             previewCamera = cameraIdx
@@ -61,9 +67,7 @@ class MainViewController: UIViewController {
         
     }
     @IBAction func previewToOnAirPressed(sender: AnyObject) {
-        if let cameraIdx = previewCamera, let _ = previewVideoView.videoURL {
-            onAirCamera = cameraIdx
-        }
+        goOnAir()
     }
 }
 
