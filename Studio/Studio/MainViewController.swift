@@ -4,9 +4,25 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    
+    @IBOutlet weak var previewVideoView: VideoView!
+    @IBOutlet weak var onAirVideoView: VideoView!
+    @IBOutlet var cameraVideoViews: [VideoView]!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        if let url = NSURL(string: "http://localhost.../") {
+            onAirVideoView.videoURL = url
+        }
+        onAirVideoView.setTitle("Live", color: UIColor.redColor())
+        
+        for (index,videoView) in cameraVideoViews.enumerate() {
+            videoView.setTitle("test \(index)", color: UIColor.blackColor())
+        }
+        
+        onAirVideoView.setFrameColor(UIColor.whiteColor())
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -15,5 +31,8 @@ class MainViewController: UIViewController {
     }
     
     
+    @IBAction func cameraSelected(sender: VideoView) {
+        
+    }
 }
 

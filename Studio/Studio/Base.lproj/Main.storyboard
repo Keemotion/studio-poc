@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DSG-ZS-4c2">
+                            <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DSG-ZS-4c2" customClass="VideoView" customModule="Studio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,7 +36,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IoV-gj-nSf">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IoV-gj-nSf" customClass="VideoView" customModule="Studio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,7 +54,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUv-Dd-qDX">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUv-Dd-qDX" customClass="VideoView" customModule="Studio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,7 +72,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuq-Vv-dnm">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuq-Vv-dnm" customClass="VideoView" customModule="Studio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,8 +89,11 @@
                                         <include reference="KCI-q0-17S"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="cameraSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="Zw4-cR-DAc"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltK-no-Xjf">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltK-no-Xjf" customClass="VideoView" customModule="Studio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.29378018477437795" blue="0.24661761653647418" alpha="1" colorSpace="calibratedRGB"/>
@@ -181,6 +184,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="onAirVideoView" destination="DSG-ZS-4c2" id="Shp-qW-LxD"/>
+                        <outlet property="previewVideoView" destination="ltK-no-Xjf" id="7yH-Ob-L5K"/>
+                        <outletCollection property="cameraVideoViews" destination="uuq-Vv-dnm" collectionClass="NSMutableArray" id="68L-OX-0EF"/>
+                        <outletCollection property="cameraVideoViews" destination="KUv-Dd-qDX" collectionClass="NSMutableArray" id="ssk-gi-iWG"/>
+                        <outletCollection property="cameraVideoViews" destination="IoV-gj-nSf" collectionClass="NSMutableArray" id="Y9f-qx-qZQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
