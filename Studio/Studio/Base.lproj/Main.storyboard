@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -21,10 +21,17 @@
                             <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DSG-ZS-4c2" customClass="VideoView" customModule="Studio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DSG-ZS-4c2" secondAttribute="height" multiplier="16:9" id="bvj-Ot-0OG"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="On air"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="videoURL" value="http://keemotion.com"/>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="bvj-Ot-0OG"/>
@@ -96,10 +103,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltK-no-Xjf" customClass="VideoView" customModule="Studio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="0.29378018477437795" blue="0.24661761653647418" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ltK-no-Xjf" secondAttribute="height" multiplier="16:9" id="ZA5-fF-grd"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Preview"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="frameColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="ZA5-fF-grd"/>
@@ -140,19 +156,19 @@
                                 <exclude reference="ltK-no-Xjf"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Za1-Pt-QQN"/>
+                                <exclude reference="Zly-l1-1wc"/>
+                                <exclude reference="e8m-aE-Rx8"/>
                                 <exclude reference="24T-AJ-NjS"/>
                                 <exclude reference="OL5-Yi-q50"/>
                                 <exclude reference="q3w-H4-0E3"/>
-                                <exclude reference="7lX-G0-I9T"/>
-                                <exclude reference="YYQ-et-y0P"/>
-                                <exclude reference="saf-oy-hi5"/>
                                 <exclude reference="0be-Jd-s8L"/>
                                 <exclude reference="Cu6-pA-dRn"/>
                                 <exclude reference="JPz-oN-IaJ"/>
                                 <exclude reference="XpA-xJ-JQy"/>
-                                <exclude reference="Za1-Pt-QQN"/>
-                                <exclude reference="Zly-l1-1wc"/>
-                                <exclude reference="e8m-aE-Rx8"/>
+                                <exclude reference="7lX-G0-I9T"/>
+                                <exclude reference="YYQ-et-y0P"/>
+                                <exclude reference="saf-oy-hi5"/>
                                 <exclude reference="QVX-5l-7hq"/>
                                 <exclude reference="ZEy-qh-b90"/>
                             </mask>
@@ -166,19 +182,19 @@
                                 <include reference="ltK-no-Xjf"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Za1-Pt-QQN"/>
+                                <include reference="Zly-l1-1wc"/>
+                                <include reference="e8m-aE-Rx8"/>
                                 <include reference="24T-AJ-NjS"/>
                                 <include reference="OL5-Yi-q50"/>
                                 <include reference="q3w-H4-0E3"/>
-                                <include reference="7lX-G0-I9T"/>
-                                <include reference="YYQ-et-y0P"/>
-                                <include reference="saf-oy-hi5"/>
                                 <include reference="0be-Jd-s8L"/>
                                 <include reference="Cu6-pA-dRn"/>
                                 <include reference="JPz-oN-IaJ"/>
                                 <include reference="XpA-xJ-JQy"/>
-                                <include reference="Za1-Pt-QQN"/>
-                                <include reference="Zly-l1-1wc"/>
-                                <include reference="e8m-aE-Rx8"/>
+                                <include reference="7lX-G0-I9T"/>
+                                <include reference="YYQ-et-y0P"/>
+                                <include reference="saf-oy-hi5"/>
                                 <include reference="QVX-5l-7hq"/>
                                 <include reference="ZEy-qh-b90"/>
                             </mask>

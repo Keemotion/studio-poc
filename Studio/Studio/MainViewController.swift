@@ -12,17 +12,8 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let url = NSURL(string: "http://localhost:1337/mjpeg_stream") {
-            onAirVideoView.videoURL = url
-        }
-        onAirVideoView.setTitle("Live", color: UIColor.redColor())
-        
-        for (index,videoView) in cameraVideoViews.enumerate() {
-            videoView.setTitle("test \(index)", color: UIColor.blackColor())
-        }
-        
-        onAirVideoView.setFrameColor(UIColor.whiteColor())
-        
+        onAirVideoView.title = "fdsfsf"
+        previewVideoView.title = "fdsfsf"        
     }
     
     override func didReceiveMemoryWarning() {
