@@ -13,7 +13,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         onAirVideoView.title = "fdsfsf"
-        previewVideoView.title = "fdsfsf"        
+        previewVideoView.title = "fdsfsf"
+        previewVideoView.videoURL = "http://10.3.10.34:1337/mjpeg_stream"
     }
     
     override func didReceiveMemoryWarning() {
