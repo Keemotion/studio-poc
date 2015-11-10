@@ -35,15 +35,13 @@ import UIKit
         
     }
     
+    var videoConnection: MJPEGConnection?
    
     @IBInspectable
     var videoURL: String? {
         didSet {
             if let videoURLStr = videoURL, let url = NSURL(string: videoURLStr) {
-                // dummy code while implementation is not there
-                let request = NSURLRequest(URL: url)
-                
-                NSURLConnection(request: request, delegate: self)
+                videoConnection = MJPEGConnection(url: url)
             }
         }
     }
@@ -75,27 +73,9 @@ import UIKit
                 layer.borderWidth = 2.0
                 layer.borderColor = c.CGColor
             }
+            else {
+                layer.borderWidth = 0
+            }
         }
-    }
-    
-    //delegate
-    
-    func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse) {
-        // put through data
-        if let mjpegImage = UIImage(data: data) {
-            setImage(mjpegImage, forState: .Normal)
-        }
-        // reset data
-        self.data.length = 0
-    }
-    
-    
-    func connection(connection: NSURLConnection, didReceiveData data: NSData) {
-        self.data.appendData(data)
-    }
-
-    
-    func connection(connection: NSURLConnection, didFailWithError error: NSError) {
-        print(error.localizedDescription)
     }
 }

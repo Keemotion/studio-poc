@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -26,11 +26,10 @@
                                     <constraint firstAttribute="width" secondItem="DSG-ZS-4c2" secondAttribute="height" multiplier="16:9" id="bvj-Ot-0OG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="On air"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Preview"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="videoURL" value="http://keemotion.com"/>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -50,6 +49,10 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IoV-gj-nSf" secondAttribute="height" multiplier="16:9" id="jSg-KI-wtJ"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="videoURL" value="http://10.3.10.32:1337/mjpeg_stream"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Cam 1"/>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="jSg-KI-wtJ"/>
@@ -60,6 +63,9 @@
                                         <include reference="jSg-KI-wtJ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="cameraSelected:" destination="BYZ-38-t0r" eventType="touchDown" id="b3V-RR-RXH"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUv-Dd-qDX" customClass="VideoView" customModule="Studio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -68,6 +74,10 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KUv-Dd-qDX" secondAttribute="height" multiplier="16:9" id="I51-JH-eUW"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="videoURL" value="http://vid2"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Cam2"/>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="I51-JH-eUW"/>
@@ -78,6 +88,9 @@
                                         <include reference="I51-JH-eUW"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="cameraSelected:" destination="BYZ-38-t0r" eventType="touchDown" id="3yE-uX-uLI"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuq-Vv-dnm" customClass="VideoView" customModule="Studio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -86,6 +99,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uuq-Vv-dnm" secondAttribute="height" multiplier="16:9" id="KCI-q0-17S"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Cam3"/>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="KCI-q0-17S"/>
@@ -97,7 +113,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="cameraSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="Zw4-cR-DAc"/>
+                                    <action selector="cameraSelected:" destination="BYZ-38-t0r" eventType="touchDown" id="wqY-qh-7pA"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltK-no-Xjf" customClass="VideoView" customModule="Studio" customModuleProvider="target">
@@ -108,11 +124,8 @@
                                     <constraint firstAttribute="width" secondItem="ltK-no-Xjf" secondAttribute="height" multiplier="16:9" id="ZA5-fF-grd"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Preview"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="On Air"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="frameColor">
                                         <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -126,7 +139,33 @@
                                         <include reference="ZA5-fF-grd"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="cameraSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="8Vn-Ku-pIE"/>
+                                </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jot-Lp-dEO" customClass="OnAirButton" customModule="Studio" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="fwH-YV-7LE"/>
+                                </constraints>
+                                <state key="normal" image="766-arrow-right">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fwH-YV-7LE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="fwH-YV-7LE"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="previewToOnAirPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GBH-tT-G0S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
@@ -134,18 +173,21 @@
                             <constraint firstItem="IoV-gj-nSf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="0be-Jd-s8L"/>
                             <constraint firstItem="DSG-ZS-4c2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="24T-AJ-NjS"/>
                             <constraint firstAttribute="trailing" secondItem="ltK-no-Xjf" secondAttribute="trailing" constant="5" id="7lX-G0-I9T"/>
+                            <constraint firstItem="jot-Lp-dEO" firstAttribute="leading" secondItem="DSG-ZS-4c2" secondAttribute="trailing" constant="5" id="9HS-JW-iW1"/>
                             <constraint firstItem="KUv-Dd-qDX" firstAttribute="leading" secondItem="IoV-gj-nSf" secondAttribute="trailing" constant="5" id="Cu6-pA-dRn"/>
                             <constraint firstItem="KUv-Dd-qDX" firstAttribute="width" secondItem="uuq-Vv-dnm" secondAttribute="width" id="JPz-oN-IaJ"/>
                             <constraint firstItem="DSG-ZS-4c2" firstAttribute="width" secondItem="ltK-no-Xjf" secondAttribute="width" id="OL5-Yi-q50"/>
                             <constraint firstItem="uuq-Vv-dnm" firstAttribute="leading" secondItem="KUv-Dd-qDX" secondAttribute="trailing" constant="5" id="QVX-5l-7hq"/>
+                            <constraint firstItem="ltK-no-Xjf" firstAttribute="leading" secondItem="jot-Lp-dEO" secondAttribute="trailing" constant="5" id="U5T-bR-wXX"/>
                             <constraint firstItem="KUv-Dd-qDX" firstAttribute="width" secondItem="IoV-gj-nSf" secondAttribute="width" id="XpA-xJ-JQy"/>
                             <constraint firstItem="ltK-no-Xjf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="YYQ-et-y0P"/>
                             <constraint firstAttribute="trailing" secondItem="uuq-Vv-dnm" secondAttribute="trailing" constant="5" id="ZEy-qh-b90"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KUv-Dd-qDX" secondAttribute="bottom" constant="5" id="Za1-Pt-QQN"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IoV-gj-nSf" secondAttribute="bottom" constant="5" id="Zly-l1-1wc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uuq-Vv-dnm" secondAttribute="bottom" constant="5" id="e8m-aE-Rx8"/>
+                            <constraint firstItem="jot-Lp-dEO" firstAttribute="height" secondItem="DSG-ZS-4c2" secondAttribute="height" id="hWr-Om-yF9"/>
                             <constraint firstItem="DSG-ZS-4c2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="q3w-H4-0E3"/>
-                            <constraint firstItem="ltK-no-Xjf" firstAttribute="leading" secondItem="DSG-ZS-4c2" secondAttribute="trailing" constant="5" id="saf-oy-hi5"/>
+                            <constraint firstItem="jot-Lp-dEO" firstAttribute="centerY" secondItem="ltK-no-Xjf" secondAttribute="centerY" id="zfk-09-6ad"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -154,11 +196,15 @@
                                 <exclude reference="KUv-Dd-qDX"/>
                                 <exclude reference="uuq-Vv-dnm"/>
                                 <exclude reference="ltK-no-Xjf"/>
+                                <exclude reference="jot-Lp-dEO"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Za1-Pt-QQN"/>
                                 <exclude reference="Zly-l1-1wc"/>
                                 <exclude reference="e8m-aE-Rx8"/>
+                                <exclude reference="9HS-JW-iW1"/>
+                                <exclude reference="hWr-Om-yF9"/>
+                                <exclude reference="zfk-09-6ad"/>
                                 <exclude reference="24T-AJ-NjS"/>
                                 <exclude reference="OL5-Yi-q50"/>
                                 <exclude reference="q3w-H4-0E3"/>
@@ -167,8 +213,8 @@
                                 <exclude reference="JPz-oN-IaJ"/>
                                 <exclude reference="XpA-xJ-JQy"/>
                                 <exclude reference="7lX-G0-I9T"/>
+                                <exclude reference="U5T-bR-wXX"/>
                                 <exclude reference="YYQ-et-y0P"/>
-                                <exclude reference="saf-oy-hi5"/>
                                 <exclude reference="QVX-5l-7hq"/>
                                 <exclude reference="ZEy-qh-b90"/>
                             </mask>
@@ -180,11 +226,15 @@
                                 <include reference="KUv-Dd-qDX"/>
                                 <include reference="uuq-Vv-dnm"/>
                                 <include reference="ltK-no-Xjf"/>
+                                <include reference="jot-Lp-dEO"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Za1-Pt-QQN"/>
                                 <include reference="Zly-l1-1wc"/>
                                 <include reference="e8m-aE-Rx8"/>
+                                <include reference="9HS-JW-iW1"/>
+                                <include reference="hWr-Om-yF9"/>
+                                <include reference="zfk-09-6ad"/>
                                 <include reference="24T-AJ-NjS"/>
                                 <include reference="OL5-Yi-q50"/>
                                 <include reference="q3w-H4-0E3"/>
@@ -193,16 +243,16 @@
                                 <include reference="JPz-oN-IaJ"/>
                                 <include reference="XpA-xJ-JQy"/>
                                 <include reference="7lX-G0-I9T"/>
+                                <include reference="U5T-bR-wXX"/>
                                 <include reference="YYQ-et-y0P"/>
-                                <include reference="saf-oy-hi5"/>
                                 <include reference="QVX-5l-7hq"/>
                                 <include reference="ZEy-qh-b90"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="onAirVideoView" destination="DSG-ZS-4c2" id="Shp-qW-LxD"/>
-                        <outlet property="previewVideoView" destination="ltK-no-Xjf" id="7yH-Ob-L5K"/>
+                        <outlet property="onAirVideoView" destination="ltK-no-Xjf" id="DU5-yn-gIi"/>
+                        <outlet property="previewVideoView" destination="DSG-ZS-4c2" id="eIe-lY-cba"/>
                         <outletCollection property="cameraVideoViews" destination="uuq-Vv-dnm" collectionClass="NSMutableArray" id="68L-OX-0EF"/>
                         <outletCollection property="cameraVideoViews" destination="KUv-Dd-qDX" collectionClass="NSMutableArray" id="ssk-gi-iWG"/>
                         <outletCollection property="cameraVideoViews" destination="IoV-gj-nSf" collectionClass="NSMutableArray" id="Y9f-qx-qZQ"/>
@@ -213,4 +263,7 @@
             <point key="canvasLocation" x="566.25" y="642"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="766-arrow-right" width="14" height="28"/>
+    </resources>
 </document>
