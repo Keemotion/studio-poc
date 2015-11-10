@@ -13,9 +13,10 @@
 		72C14BC41BF0D84F00AA94EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72C14BC21BF0D84F00AA94EB /* LaunchScreen.storyboard */; };
 		72C14BCE1BF0E2BE00AA94EB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C14BCD1BF0E2BE00AA94EB /* MainViewController.swift */; };
 		72C14BD01BF0E35500AA94EB /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C14BCF1BF0E35500AA94EB /* VideoView.swift */; };
-		D3CFD48C1BF2207A006603CF /* MJPEGConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CFD48B1BF2207A006603CF /* MJPEGConnection.swift */; };
 		72F157F61BF1F7F000EDE180 /* OnAirButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F157F51BF1F7F000EDE180 /* OnAirButton.swift */; };
 		72F157F81BF2034800EDE180 /* DummyConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F157F71BF2034800EDE180 /* DummyConnection.swift */; };
+		D3CFD48C1BF2207A006603CF /* MJPEGConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CFD48B1BF2207A006603CF /* MJPEGConnection.swift */; };
+		D3CFD48E1BF2279D006603CF /* MJPEGBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CFD48D1BF2279D006603CF /* MJPEGBuffer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +28,10 @@
 		72C14BC51BF0D84F00AA94EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72C14BCD1BF0E2BE00AA94EB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		72C14BCF1BF0E35500AA94EB /* VideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
-		D3CFD48B1BF2207A006603CF /* MJPEGConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJPEGConnection.swift; sourceTree = "<group>"; };
 		72F157F51BF1F7F000EDE180 /* OnAirButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnAirButton.swift; sourceTree = "<group>"; };
 		72F157F71BF2034800EDE180 /* DummyConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyConnection.swift; sourceTree = "<group>"; };
+		D3CFD48B1BF2207A006603CF /* MJPEGConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJPEGConnection.swift; sourceTree = "<group>"; };
+		D3CFD48D1BF2279D006603CF /* MJPEGBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJPEGBuffer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				D3CFD48B1BF2207A006603CF /* MJPEGConnection.swift */,
 				72F157F51BF1F7F000EDE180 /* OnAirButton.swift */,
 				72F157F71BF2034800EDE180 /* DummyConnection.swift */,
+				D3CFD48D1BF2279D006603CF /* MJPEGBuffer.swift */,
 			);
 			path = Studio;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				72F157F81BF2034800EDE180 /* DummyConnection.swift in Sources */,
 				72C14BD01BF0E35500AA94EB /* VideoView.swift in Sources */,
 				72F157F61BF1F7F000EDE180 /* OnAirButton.swift in Sources */,
+				D3CFD48E1BF2279D006603CF /* MJPEGBuffer.swift in Sources */,
 				72C14BBA1BF0D84F00AA94EB /* AppDelegate.swift in Sources */,
 				72C14BCE1BF0E2BE00AA94EB /* MainViewController.swift in Sources */,
 				D3CFD48C1BF2207A006603CF /* MJPEGConnection.swift in Sources */,
