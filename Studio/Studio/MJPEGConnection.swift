@@ -19,12 +19,14 @@ class MJPEGConnection: NSObject, NSURLConnectionDataDelegate {
     
     private var imageChanged: UIImage -> Void = { _ in }
 
+    let queue: dispatch_queue_t = dispatch_queue_create("camera_capture \(arc4random_uniform(999))", nil)
+    
     init(url: NSURL) {
         self.url = url
         super.init()
         
         let request = NSURLRequest(URL: url)
-            
+        
         self.connection = NSURLConnection(request: request, delegate: self, startImmediately: false)
     }
     
@@ -43,17 +45,24 @@ class MJPEGConnection: NSObject, NSURLConnectionDataDelegate {
     
     
     func connection(connection: NSURLConnection, didReceiveResponse response: NSURLResponse) {
-        // put through data
-        if let mjpegImage = UIImage(data: data) {
-            imageChanged(mjpegImage)
-        }
-        // reset data
-        self.data.length = 0
+        
+        dispatch_async(self.queue, {
+            
+            // put through data
+            if let mjpegImage = UIImage(data: self.data) {
+                self.imageChanged(mjpegImage)
+            }
+            // reset data
+            self.data = NSMutableData()
+
+        });
     }
     
     
     func connection(connection: NSURLConnection, didReceiveData data: NSData) {
-        self.data.appendData(data)
+        dispatch_async(self.queue, {
+            self.data.appendData(data)
+        })
     }
     
     

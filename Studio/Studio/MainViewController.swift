@@ -10,9 +10,11 @@ class MainViewController: UIViewController {
         didSet {
             for (i,v) in cameraVideoViews.enumerate() {
                 v.videoConnection?.start(withHandler: { (image:UIImage) -> Void in
-                    v.setImage(image, forState: .Normal)
-                    if i == self.previewCamera { self.previewVideoView.setImage(image, forState: .Normal)}
-                    if i == self.onAirCamera { self.onAirVideoView.setImage(image, forState: .Normal)}
+                    dispatch_async(dispatch_get_main_queue(),{
+                        v.setImage(image, forState: .Normal)
+                        if i == self.previewCamera { self.previewVideoView.setImage(image, forState: .Normal)}
+                        if i == self.onAirCamera { self.onAirVideoView.setImage(image, forState: .Normal)}
+                    })
                 })
             }
         }
