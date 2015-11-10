@@ -2,33 +2,80 @@
 import Foundation
 import UIKit
 
-class VideoView: UIButton {
+@IBDesignable class VideoView: UIButton {
 
-    var videoURL: NSURL! {
+    var titleLabelView : UILabel?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    func setup() {
+        let labelView = UILabel(frame: CGRect(origin: CGPoint(x: 3, y: 3), size: CGSize(width: 5, height: 5)))
+        labelView.backgroundColor = color
+        labelView.textAlignment = .Center
+        labelView.font = UIFont.systemFontOfSize(10)
+        labelView.textColor = UIColor.whiteColor()
+        labelView.text = title
+        labelView.sizeToFit()
+        labelView.frame = CGRectApplyAffineTransform(labelView.frame, CGAffineTransformMakeScale(1.5, 1.5))
+        addSubview(labelView)
+        bringSubviewToFront(labelView)
+        titleLabelView = labelView
+        backgroundColor = UIColor(white: 0.16, alpha: 1)
+        
+    }
+    
+    @IBInspectable
+    var videoURL: String? {
         didSet {
-            let textView = UILabel(frame: self.bounds)
-            textView.text = videoURL.absoluteString;
-            textView.textAlignment = .Center
-            textView.backgroundColor = UIColor.blueColor()
-            self.addSubview(textView)
+            if let videoURLStr = videoURL, let url = NSURL(string: videoURLStr) {
+                // dummy code while implementation is not there
+                for s in self.subviews { s.removeFromSuperview() }
+                let textView = UILabel(frame: self.bounds)
+                textView.text = url.absoluteString;
+                textView.textAlignment = .Center
+                textView.autoresizingMask = UIViewAutoresizing([.FlexibleWidth,.FlexibleHeight])
+                textView.backgroundColor = UIColor.blueColor()
+                self.addSubview(textView)
+            }
         }
     }
   
-    func setTitle(title: String, color: UIColor) {
-        let textView = UILabel(frame: CGRect(origin: CGPoint(x: 3, y: 3), size: CGSize(width: 5, height: 5)))
-        textView.text = title
-        textView.backgroundColor = color
-        textView.textAlignment = .Center
-        textView.font = UIFont.systemFontOfSize(10)
-        textView.textColor = UIColor.whiteColor()
-        textView.sizeToFit()
-        textView.frame = CGRectApplyAffineTransform(textView.frame, CGAffineTransformMakeScale(1.5, 1.5))
-        addSubview(textView)
+    @IBInspectable
+    var title: String = "" {
+        didSet {
+            if let labelView = titleLabelView {
+                labelView.text = title
+                labelView.sizeToFit()
+                labelView.frame = CGRectApplyAffineTransform(labelView.frame, CGAffineTransformMakeScale(1.5, 1.5))
+            }
+        }
     }
     
-    func setFrameColor(color: UIColor) {
-        layer.borderWidth = 2.0
-        layer.borderColor = color.CGColor
+    @IBInspectable
+    var color: UIColor = UIColor.blackColor() {
+        didSet {
+            if let labelView = titleLabelView {
+                labelView.backgroundColor = color
+            }
+        }
+    }
+    
+    @IBInspectable
+    var frameColor: UIColor? {
+        didSet {
+            if let c = frameColor {
+                layer.borderWidth = 2.0
+                layer.borderColor = c.CGColor
+            }
+        }
     }
     
 }
